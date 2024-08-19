@@ -1,7 +1,9 @@
 const nodemailer = require('nodemailer');
 const logger = require('pino')();
-const { generateOtp, verifyOtp } = require('../modules/GenerateOtp');
+const { generateOtp } = require('../modules/GenerateOtp');
 const { generateOtpTemplate } = require('../htmlTemplates/generateOtpTemplate');
+const { convertHtmlToPdf } = require('../modules/convertHtmlToPdf');
+const { convertpdftoBase64 } = require('../modules/convertpdfToBase64');
 require('dotenv').config();
 
 module.exports.sendEmailOtpBusiness=async (req) =>{
@@ -27,6 +29,10 @@ module.exports.sendEmailOtpBusiness=async (req) =>{
 
       // create html
       const html = generateOtpTemplate(otp?.otp)
+
+      convertHtmlToPdf(html,'output.pdf')
+
+      convertpdftoBase64('./output.pdf')
 
       // prepare a email sending config
       const createEmailTemplate = {
