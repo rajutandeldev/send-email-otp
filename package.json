@@ -1,0 +1,26 @@
+{
+  "name": "send-email-otp",
+  "version": "1.0.0",
+  "description": "this api is used to send the email otp via mail",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajutandeldev/send-email-otp.git"
+  },
+  "author": "Raju Thandela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajutandeldev/send-email-otp/issues"
+  },
+  "homepage": "https://github.com/rajutandeldev/send-email-otp#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "otplib": "^12.0.1"
+  }
+}
