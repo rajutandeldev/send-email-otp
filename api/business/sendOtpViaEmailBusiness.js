@@ -32,9 +32,8 @@ module.exports.sendEmailOtpBusiness=async (req) =>{
       const createEmailTemplate = {
         from: 'sender-email',  // sender address
         to: 'reciever-email', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world?', // plain text body
-        html: '<b>Hello world?</b>', // html body
+        subject: 'OTP verification mail', // Subject line
+        html, // html body
       };
           
       async function sendEmail() {
